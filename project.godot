@@ -15,6 +15,14 @@ run/main_scene="uid://bwbybr7nyjlan"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=150
+window/size/viewport_height=100
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
