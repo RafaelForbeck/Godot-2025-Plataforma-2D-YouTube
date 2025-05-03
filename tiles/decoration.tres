@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://biivjt7bm3tra" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="2_k56fq"]
 [ext_resource type="Texture2D" uid="uid://elssfruw2fos" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="3_b4fdq"]
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_hjahj"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_p1ry8"]
 tile_data = PackedInt32Array(65536, 65536, 5, 1, 65536, 1, 65537, 65536, 5, 3, 65536, 1)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_lb8v8"]
+[sub_resource type="TileMapPattern" id="TileMapPattern_xlg7c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ll5lq"]
 texture = ExtResource("1_4pksi")
@@ -57,5 +57,5 @@ texture = ExtResource("3_b4fdq")
 sources/0 = SubResource("TileSetAtlasSource_ll5lq")
 sources/1 = SubResource("TileSetAtlasSource_17rxn")
 sources/2 = SubResource("TileSetAtlasSource_yq8tf")
-pattern_0 = SubResource("TileMapPattern_hjahj")
-pattern_1 = SubResource("TileMapPattern_lb8v8")
+pattern_0 = SubResource("TileMapPattern_p1ry8")
+pattern_1 = SubResource("TileMapPattern_xlg7c")

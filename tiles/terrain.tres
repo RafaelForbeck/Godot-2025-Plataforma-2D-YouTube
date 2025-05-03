@@ -70,8 +70,7 @@ texture = ExtResource("1_udkip")
 5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_selcm"]
-resource_name = "Autumn"
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qpk70"]
 texture = ExtResource("2_8t5ty")
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
@@ -140,4 +139,4 @@ texture = ExtResource("2_8t5ty")
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_33cqm")
-sources/1 = SubResource("TileSetAtlasSource_selcm")
+sources/1 = SubResource("TileSetAtlasSource_qpk70")
