@@ -1,8 +1,11 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://ci6yocecub5y3"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://ci6yocecub5y3"]
 
 [ext_resource type="Texture2D" uid="uid://crk0d4b1jyus4" path="res://sprites/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_udkip"]
 [ext_resource type="Texture2D" uid="uid://b4rwuf8uohjsb" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_8t5ty"]
 [ext_resource type="Texture2D" uid="uid://tsm5t5xdta78" path="res://sprites/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="3_8t5ty"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_8t5ty"]
+tile_data = PackedInt32Array(0, 589826, 3, 1, 655362, 3, 2, 786434, 3, 3, 851970, 3)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33cqm"]
 resource_name = "Grassland"
@@ -221,3 +224,4 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_33cqm")
 sources/1 = SubResource("TileSetAtlasSource_qpk70")
 sources/2 = SubResource("TileSetAtlasSource_selcm")
+pattern_0 = SubResource("TileMapPattern_8t5ty")
