@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tsqqufbk23of"
-path="res://.godot/imported/3 - Floating_clouds.png-9c0b5f94f9b7021339b9845cfa9a871d.ctex"
+uid="uid://bxlggdi5ar5v2"
+path="res://.godot/imported/3 - Background_clouds.png-3bc60d4a7d761b1f2ad053158fdbc179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png"
-dest_files=["res://.godot/imported/3 - Floating_clouds.png-9c0b5f94f9b7021339b9845cfa9a871d.ctex"]
+source_file="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/3 - Background_clouds.png"
+dest_files=["res://.godot/imported/3 - Background_clouds.png-3bc60d4a7d761b1f2ad053158fdbc179.ctex"]
 
 [params]
 
