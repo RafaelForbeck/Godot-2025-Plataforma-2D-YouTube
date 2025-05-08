@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://c8yhqpob56plw"]
+[gd_scene load_steps=11 format=4 uid="uid://c8yhqpob56plw"]
 
 [ext_resource type="PackedScene" uid="uid://b4uyanguafauh" path="res://entities/player.tscn" id="1_bmxgx"]
 [ext_resource type="TileSet" uid="uid://ci6yocecub5y3" path="res://tiles/terrain.tres" id="2_ry6l7"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bxlggdi5ar5v2" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/3 - Background_clouds.png" id="6_pss51"]
 [ext_resource type="Texture2D" uid="uid://coy58shs7swok" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="7_7xb8y"]
 [ext_resource type="Texture2D" uid="uid://4sjjrq0dx78p" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="8_34ia6"]
+[ext_resource type="PackedScene" uid="uid://cdtr6sp6pckop" path="res://entities/camera.tscn" id="9_34ia6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d18o5"]
 animations = [{
@@ -24,9 +25,6 @@ animations = [{
 }]
 
 [node name="Tropic" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_bmxgx")]
-position = Vector2(34, 161)
 
 [node name="Terrain" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAsAAgACAAMAAAABAAsAAgACAAMAAAACAAsAAgACAAMAAAADAAsAAgACAAMAAAAEAAsAAgACAAMAAAAFAAsAAgACAAMAAAAGAAsAAgACAAMAAAAHAAsAAgACAAMAAAAIAAsAAgACAAMAAAAJAAsAAgAHAAMAAAAMAAoAAgAPAAMAAAAPAAsAAgABAAMAAAAQAAsAAgACAAMAAAARAAsAAgACAAMAAAASAAsAAgACAAMAAAATAAsAAgACAAMAAAAUAAsAAgACAAMAAAAVAAsAAgACAAMAAAAWAAsAAgACAAMAAAAXAAsAAgACAAMAAAAYAAsAAgACAAMAAAAZAAsAAgACAAMAAAAaAAsAAgACAAMAAAAbAAsAAgACAAMAAAAcAAsAAgACAAMAAAAdAAsAAgACAAMAAAAeAAsAAgACAAMAAAAfAAsAAgACAAMAAAAgAAsAAgACAAMAAAAhAAsAAgACAAMAAAAiAAsAAgACAAMAAAAjAAsAAgACAAMAAAAkAAsAAgACAAMAAAAlAAsAAgACAAMAAAAmAAsAAgACAAMAAAAnAAsAAgACAAMAAAAoAAsAAgACAAMAAAApAAsAAgACAAMAAAAqAAsAAgACAAMAAAArAAsAAgACAAMAAAAsAAsAAgACAAMAAAAtAAsAAgACAAMAAAAuAAsAAgACAAMAAAAvAAsAAgACAAMAAAAwAAsAAgACAAMAAAAxAAsAAgACAAMAAAAyAAsAAgACAAMAAAAzAAsAAgACAAMAAAA0AAsAAgACAAMAAAA1AAsAAgACAAMAAAA2AAsAAgACAAMAAAA3AAsAAgACAAMAAAA4AAsAAgACAAMAAAA5AAsAAgACAAMAAAA6AAsAAgACAAMAAAA7AAsAAgACAAMAAAA8AAsAAgACAAMAAAA9AAsAAgACAAMAAAA+AAsAAgACAAMAAAA/AAsAAgACAAMAAAAIAAcAAgAJAAMAAAAJAAcAAgAKAAMAAAAKAAcAAgAMAAMAAAALAAcAAgANAAMAAAAGAAQAAgAJAAMAAAAHAAQAAgAKAAMAAAAIAAQAAgAMAAMAAAAJAAQAAgANAAMAAAAJAAEAAgAJAAMAAAAKAAEAAgAKAAMAAAALAAEAAgAMAAMAAAAMAAEAAgANAAMAAAALAP7/AgAJAAMAAAAMAP7/AgAKAAMAAAANAP7/AgAMAAMAAAAOAP7/AgANAAMAAAAJAPv/AgAJAAMAAAAKAPv/AgAKAAMAAAALAPv/AgAMAAMAAAAMAPv/AgANAAMAAAAOAPj/AgAJAAMAAAAPAPj/AgAKAAMAAAAQAPj/AgAMAAMAAAARAPj/AgANAAMAAAALAPX/AgAJAAMAAAAMAPX/AgAKAAMAAAANAPX/AgAMAAMAAAAOAPX/AgANAAMAAAAIAPL/AgAJAAMAAAAJAPL/AgAKAAMAAAAKAPL/AgAMAAMAAAALAPL/AgANAAMAAAALAO//AgAJAAMAAAAMAO//AgAKAAMAAAANAO//AgAMAAMAAAAOAO//AgANAAMAAAA=")
@@ -89,3 +87,9 @@ sprite_frames = SubResource("SpriteFrames_d18o5")
 autoplay = "default"
 frame_progress = 0.931735
 centered = false
+
+[node name="Camera" parent="." instance=ExtResource("9_34ia6")]
+position = Vector2(49, 118)
+
+[node name="Player" parent="." instance=ExtResource("1_bmxgx")]
+position = Vector2(47, 147)
