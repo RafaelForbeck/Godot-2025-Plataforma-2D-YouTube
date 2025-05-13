@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://byo1oohh1d26d"]
+[gd_scene load_steps=16 format=4 uid="uid://byo1oohh1d26d"]
 
 [ext_resource type="PackedScene" uid="uid://b4uyanguafauh" path="res://entities/player.tscn" id="1_e2knd"]
 [ext_resource type="TileSet" uid="uid://ci6yocecub5y3" path="res://tiles/terrain.tres" id="2_2xpkg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://48lr4v8vyi2n" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_gwku7"]
 [ext_resource type="Texture2D" uid="uid://itttp321tjbb" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="8_64es3"]
 [ext_resource type="PackedScene" uid="uid://cdtr6sp6pckop" path="res://entities/camera.tscn" id="9_jo4av"]
+[ext_resource type="PackedScene" uid="uid://nm82sifvd23i" path="res://entities/level_end.tscn" id="12_64es3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwku7"]
 texture = ExtResource("3_jxvlp")
@@ -54,6 +55,9 @@ texture = ExtResource("3_jxvlp")
 
 [sub_resource type="TileSet" id="TileSet_64es3"]
 sources/0 = SubResource("TileSetAtlasSource_gwku7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmspj"]
+size = Vector2(20, 180)
 
 [node name="Forest" type="Node2D"]
 metadata/_edit_vertical_guides_ = [620.0]
@@ -148,3 +152,12 @@ region_rect = Rect2(0, 0, 576, 208)
 position = Vector2(42, 97)
 limit_top = 0
 limit_right = 620
+
+[node name="LevelEnd" parent="." instance=ExtResource("12_64es3")]
+position = Vector2(623, 153)
+
+[node name="CollisionShape2D" parent="LevelEnd" index="0"]
+position = Vector2(0, -55)
+shape = SubResource("RectangleShape2D_kmspj")
+
+[editable path="LevelEnd"]
