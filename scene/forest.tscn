@@ -63,7 +63,7 @@ size = Vector2(20, 180)
 metadata/_edit_vertical_guides_ = [620.0]
 
 [node name="Player" parent="." instance=ExtResource("1_e2knd")]
-position = Vector2(43, 151)
+position = Vector2(11, 180)
 
 [node name="TileMaps" type="Node" parent="."]
 
@@ -154,7 +154,8 @@ limit_top = 0
 limit_right = 620
 
 [node name="LevelEnd" parent="." instance=ExtResource("12_64es3")]
-position = Vector2(623, 153)
+position = Vector2(636, 153)
+next_level = "tropic"
 
 [node name="CollisionShape2D" parent="LevelEnd" index="0"]
 position = Vector2(0, -55)
