@@ -123,5 +123,4 @@ shape = SubResource("CapsuleShape2D_u3f3p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"jump"
-autoplay = "idle"
+animation = &"idle"
