@@ -3,7 +3,8 @@ extends CharacterBody2D
 enum PlayerState {
 	idle,
 	walk,
-	jump
+	jump,
+	duck
 }
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
@@ -27,7 +28,9 @@ func _physics_process(delta: float) -> void:
 		PlayerState.walk:
 			walk_state()
 		PlayerState.jump:
-			jump_State()
+			jump_state()
+		PlayerState.duck:
+			duck_state()
 			
 	move_and_slide()
 
@@ -43,6 +46,10 @@ func go_to_jump_state():
 	status = PlayerState.jump
 	anim.play("jump")
 	velocity.y = JUMP_VELOCITY
+	
+func go_to_duck_state():
+	status = PlayerState.duck
+	anim.play("duck")
 
 func idle_state():
 	move()
@@ -52,6 +59,10 @@ func idle_state():
 		
 	if Input.is_action_just_pressed("jump"):
 		go_to_jump_state()
+		return
+		
+	if Input.is_action_pressed("duck"):
+		go_to_duck_state()
 		return
 	
 func walk_state():
@@ -65,13 +76,18 @@ func walk_state():
 		return
 		
 	
-func jump_State():
+func jump_state():
 	move()
 	if is_on_floor():
 		if velocity.x == 0:
 			go_to_idle_state()
 		else:
 			go_to_walk_state()
+		return
+		
+func duck_state():
+	if Input.is_action_just_released("duck"):
+		go_to_idle_state()
 		return
 
 func move():
