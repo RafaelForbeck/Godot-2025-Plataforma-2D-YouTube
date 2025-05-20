@@ -4,6 +4,7 @@ enum PlayerState {
 	idle,
 	walk,
 	jump,
+	fall,
 	duck
 }
 
@@ -33,6 +34,8 @@ func _physics_process(delta: float) -> void:
 			walk_state()
 		PlayerState.jump:
 			jump_state()
+		PlayerState.fall:
+			fall_state()
 		PlayerState.duck:
 			duck_state()
 			
@@ -51,6 +54,10 @@ func go_to_jump_state():
 	anim.play("jump")
 	velocity.y = JUMP_VELOCITY
 	jump_count += 1
+	
+func go_to_fall_state():
+	status = PlayerState.fall
+	anim.play("fall")
 	
 func go_to_duck_state():
 	status = PlayerState.duck
@@ -88,12 +95,28 @@ func walk_state():
 		go_to_jump_state()
 		return
 		
-	
+	if !is_on_floor():
+		jump_count += 1
+		go_to_fall_state()
+		return
+		
 func jump_state():
 	move()
 	
-	if Input.is_action_just_pressed("jump") && jump_count < max_jump_count:
+	if Input.is_action_just_pressed("jump") && can_jump():
 		go_to_jump_state()
+		return
+	
+	if velocity.y > 0:
+		go_to_fall_state()
+		return
+		
+func fall_state():
+	move()
+	
+	if Input.is_action_just_pressed("jump") && can_jump():
+		go_to_jump_state()
+		return
 	
 	if is_on_floor():
 		jump_count = 0
@@ -125,3 +148,6 @@ func update_direction():
 		anim.flip_h = true
 	elif direction > 0:
 		anim.flip_h = false
+
+func can_jump() -> bool:
+	return jump_count < max_jump_count
