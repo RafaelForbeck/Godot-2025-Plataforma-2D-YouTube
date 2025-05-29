@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c8yhqpob56plw"]
+[gd_scene load_steps=14 format=4 uid="uid://c8yhqpob56plw"]
 
 [ext_resource type="PackedScene" uid="uid://b4uyanguafauh" path="res://entities/player.tscn" id="1_bmxgx"]
 [ext_resource type="TileSet" uid="uid://ci6yocecub5y3" path="res://tiles/terrain.tres" id="2_ry6l7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://4sjjrq0dx78p" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/2 - Waters_version_2.png" id="8_34ia6"]
 [ext_resource type="PackedScene" uid="uid://cdtr6sp6pckop" path="res://entities/camera.tscn" id="9_34ia6"]
 [ext_resource type="PackedScene" uid="uid://nm82sifvd23i" path="res://entities/level_end.tscn" id="10_d18o5"]
+[ext_resource type="PackedScene" uid="uid://bes2p46skt65p" path="res://entities/skeleton.tscn" id="11_t8vtq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d18o5"]
 animations = [{
@@ -109,5 +110,8 @@ next_level = "forest"
 [node name="CollisionShape2D" parent="LevelEnd" index="0"]
 position = Vector2(0, -61)
 shape = SubResource("RectangleShape2D_d18o5")
+
+[node name="Skeleton" parent="." instance=ExtResource("11_t8vtq")]
+position = Vector2(65, 149)
 
 [editable path="LevelEnd"]
