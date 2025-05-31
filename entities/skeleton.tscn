@@ -81,7 +81,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_oayfp")
 }],
 "loop": false,
-"name": &"dead",
+"name": &"hurt",
 "speed": 10.0
 }, {
 "frames": [{
@@ -121,9 +121,7 @@ script = ExtResource("1_yag7t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yag7t")
-animation = &"dead"
-frame = 6
-frame_progress = 1.0
+animation = &"hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 3)

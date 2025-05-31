@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 enum SkeletonState {
 	walk,
-	dead
+	hurt
 }
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
@@ -24,8 +24,8 @@ func _physics_process(delta: float) -> void:
 	match status:
 		SkeletonState.walk:
 			walk_state(delta)
-		SkeletonState.dead:
-			dead_state(delta)
+		SkeletonState.hurt:
+			hurt_state(delta)
 
 	move_and_slide()
 
@@ -33,19 +33,19 @@ func go_to_walk_state():
 	status = SkeletonState.walk
 	anim.play("walk")
 	
-func go_to_dead_state():
-	status = SkeletonState.dead
-	anim.play("dead")
+func go_to_hurt_state():
+	status = SkeletonState.hurt
+	anim.play("hurt")
 	hitbox.process_mode = Node.PROCESS_MODE_DISABLED
 	
 func walk_state(_delta):
 	pass
 	
-func dead_state(_delta):
+func hurt_state(_delta):
 	pass
 	
 func take_damage():
-	go_to_dead_state()
+	go_to_hurt_state()
 	
 	
 	
