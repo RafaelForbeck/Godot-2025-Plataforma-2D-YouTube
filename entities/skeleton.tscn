@@ -133,3 +133,11 @@ shape = SubResource("CapsuleShape2D_fpmxe")
 position = Vector2(2, 3)
 shape = SubResource("RectangleShape2D_yag7t")
 debug_color = Color(0.967938, 0, 0.471078, 0.42)
+
+[node name="WallDetector" type="RayCast2D" parent="."]
+position = Vector2(1, 13)
+target_position = Vector2(11, 0)
+
+[node name="GroundDetector" type="RayCast2D" parent="."]
+position = Vector2(11, 0)
+target_position = Vector2(0, 19)
