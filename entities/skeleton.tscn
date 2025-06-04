@@ -128,6 +128,8 @@ position = Vector2(2, 3)
 shape = SubResource("CapsuleShape2D_fpmxe")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(2, 3)

@@ -81,12 +81,6 @@ tile_set = SubResource("TileSet_64es3")
 tile_map_data = PackedByteArray("AAAlAAsAAAADAAUAAAA=")
 tile_set = ExtResource("4_gwku7")
 
-[node name="Skeleton" parent="TileMaps" instance=ExtResource("13_kmspj")]
-position = Vector2(137, 143)
-
-[node name="Skeleton2" parent="TileMaps" instance=ExtResource("13_kmspj")]
-position = Vector2(292, 141)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="6" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -170,5 +164,11 @@ shape = SubResource("RectangleShape2D_kmspj")
 
 [node name="Skeleton" parent="." instance=ExtResource("13_kmspj")]
 position = Vector2(214, 174)
+
+[node name="Skeleton2" parent="." instance=ExtResource("13_kmspj")]
+position = Vector2(137, 143)
+
+[node name="Skeleton3" parent="." instance=ExtResource("13_kmspj")]
+position = Vector2(292, 141)
 
 [editable path="LevelEnd"]
