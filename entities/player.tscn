@@ -78,17 +78,6 @@ region = Rect2(80, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ef06p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_tjdhl")
-}],
-"loop": false,
-"name": &"dead",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("2_qly61")
 }],
 "loop": false,
@@ -102,6 +91,17 @@ animations = [{
 "loop": false,
 "name": &"fall",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ef06p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tjdhl")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -184,15 +184,19 @@ shape = SubResource("CapsuleShape2D_u3f3p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_i623q")
-animation = &"dead"
-frame = 1
-frame_progress = 1.0
+animation = &"hurt"
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_6nm46")
 debug_color = Color(0.95774, 0, 0.53094, 0.42)
 
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
