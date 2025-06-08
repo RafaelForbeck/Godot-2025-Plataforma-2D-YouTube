@@ -42,7 +42,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="SpinningBone" type="Area2D"]
+[node name="SpinningBone" type="Area2D" groups=["LethalArea"]]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource("1_njpw1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -52,3 +54,12 @@ shape = SubResource("CircleShape2D_njpw1")
 sprite_frames = SubResource("SpriteFrames_cjyle")
 autoplay = "default"
 frame_progress = 0.828094
+
+[node name="SelfDestructTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="SelfDestructTimer" to="." method="_on_self_destruct_timer_timeout"]
