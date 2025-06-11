@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://byo1oohh1d26d"]
+[gd_scene load_steps=19 format=4 uid="uid://byo1oohh1d26d"]
 
 [ext_resource type="PackedScene" uid="uid://b4uyanguafauh" path="res://entities/player.tscn" id="1_e2knd"]
 [ext_resource type="TileSet" uid="uid://ci6yocecub5y3" path="res://tiles/terrain.tres" id="2_2xpkg"]
@@ -60,6 +60,9 @@ sources/0 = SubResource("TileSetAtlasSource_gwku7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmspj"]
 size = Vector2(20, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja8kk"]
+size = Vector2(13, 207)
 
 [node name="Forest" type="Node2D"]
 metadata/_edit_vertical_guides_ = [620.0]
@@ -156,7 +159,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
 
 [node name="Camera" parent="." instance=ExtResource("9_jo4av")]
-position = Vector2(42, 97)
+position = Vector2(11, 181)
 limit_top = 0
 limit_right = 620
 
@@ -169,9 +172,16 @@ position = Vector2(0, -55)
 shape = SubResource("RectangleShape2D_kmspj")
 
 [node name="Skeleton2" parent="." instance=ExtResource("13_kmspj")]
-position = Vector2(151, 144)
+position = Vector2(166, 144)
 
 [node name="Skeleton3" parent="." instance=ExtResource("13_kmspj")]
 position = Vector2(292, 141)
+
+[node name="Limit" type="StaticBody2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limit"]
+position = Vector2(-3.5, 93.5)
+shape = SubResource("RectangleShape2D_ja8kk")
 
 [editable path="LevelEnd"]
