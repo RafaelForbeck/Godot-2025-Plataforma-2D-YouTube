@@ -161,10 +161,9 @@ collision_layer = 4
 script = ExtResource("1_yag7t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 0.1)
 sprite_frames = SubResource("SpriteFrames_yag7t")
-animation = &"attack"
-frame = 2
-frame_progress = 0.564246
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
