@@ -28,6 +28,7 @@ enum PlayerState {
 @export var wall_jump_velocity = 240
 @export var water_max_speed = 100
 @export var water_acceleration = 200
+@export var water_jump_force = -100
 
 const JUMP_VELOCITY = -300.0
 
@@ -237,11 +238,11 @@ func swimming_state(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, water_acceleration * delta)
 		
-	var vertical_direction = Input.get_axis("jump", "duck")
-	if vertical_direction:
-		velocity.y = move_toward(velocity.y, water_max_speed * vertical_direction, water_acceleration * delta)
-	else:
-		velocity.y = move_toward(velocity.y, 0, water_acceleration * delta)
+	velocity.y += water_acceleration * delta
+	velocity.y = min(velocity.y, water_max_speed)
+	
+	if Input.is_action_just_pressed("jump"):
+		velocity.y = water_jump_force
 		
 func hurt_state(delta):
 	apply_gravity(delta)
