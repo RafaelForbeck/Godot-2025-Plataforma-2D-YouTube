@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://byo1oohh1d26d"]
+[gd_scene load_steps=20 format=4 uid="uid://byo1oohh1d26d"]
 
 [ext_resource type="PackedScene" uid="uid://b4uyanguafauh" path="res://entities/player.tscn" id="1_e2knd"]
 [ext_resource type="TileSet" uid="uid://ci6yocecub5y3" path="res://tiles/terrain.tres" id="2_2xpkg"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cdtr6sp6pckop" path="res://entities/camera.tscn" id="9_jo4av"]
 [ext_resource type="PackedScene" uid="uid://nm82sifvd23i" path="res://entities/level_end.tscn" id="12_64es3"]
 [ext_resource type="PackedScene" uid="uid://bes2p46skt65p" path="res://entities/skeleton.tscn" id="13_kmspj"]
+[ext_resource type="PackedScene" uid="uid://canexulbfl2ck" path="res://entities/broken_block.tscn" id="15_boiax"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gwku7"]
 texture = ExtResource("3_jxvlp")
@@ -183,5 +184,14 @@ collision_mask = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limit"]
 position = Vector2(-3.5, 93.5)
 shape = SubResource("RectangleShape2D_ja8kk")
+
+[node name="BrokenBlock" parent="." instance=ExtResource("15_boiax")]
+position = Vector2(59, 138)
+
+[node name="BrokenBlock2" parent="." instance=ExtResource("15_boiax")]
+position = Vector2(92, 108)
+
+[node name="BrokenBlock3" parent="." instance=ExtResource("15_boiax")]
+position = Vector2(131, 83)
 
 [editable path="LevelEnd"]
